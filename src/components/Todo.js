@@ -5,12 +5,12 @@ export default function Todo() {
     const input = React.useRef()
 
     const addTodo = () => {
-        if (input.current == '') {
+        if (input.current.value == '') {
             return
         }
 
-        setTodo(p => ([...p, { text: input.current, id: Math.random() }]))
-        input.current = ''
+        setTodo(p => ([...p, { text: input.current.value, id: Math.random() }]))
+        input.current.value = ''
     }
 
     const removeTodo = (_item) => {
